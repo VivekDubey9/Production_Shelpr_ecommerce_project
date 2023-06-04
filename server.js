@@ -9,6 +9,7 @@ import categoryRoutes from "./routes/categoryRoutes.js"; //name categoryRoutes g
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
 import path from "path";
+import {fileURLToPath} from 'url';
 //const colors = require('colors')
 
 //Config dotenv
@@ -16,6 +17,9 @@ dotenv.config(); // for hiding the credentials  using dotenv.config for sensitiv
 
 //databse config
 connectDB();
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object
 const app = express();
